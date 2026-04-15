@@ -50,7 +50,7 @@ export default function Hero() {
         <p style={{ fontSize: 15, color: "#6e7681", maxWidth: 460, lineHeight: 1.85, marginBottom: 44 }}>
           Construyo productos web con{" "}
           <span style={{ color: "#8b949e", fontWeight: 500 }}>buen código</span>{" "}
-          y atención al detalle — desde la interfaz hasta el servidor. Me especializo en React, Node.js y todo lo que hay en el medio.
+          y atención al detalle desde la interfaz hasta el servidor. Me especializo en React, Node.js y todo lo que hay en el medio.
         </p>
 
         {/* Botones */}
@@ -70,7 +70,7 @@ export default function Hero() {
             </svg>
           </a>
 
-          <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" style={{
+          <a href="https://github.com/iMindCap" target="_blank" rel="noopener noreferrer" style={{
             fontSize: 13, fontWeight: 500, color: "#c9d1d9", textDecoration: "none",
             padding: "11px 22px", borderRadius: 8, background: "#161b22",
             border: "1px solid #30363d", transition: "all 0.18s ease",
