@@ -55,7 +55,7 @@ export default function Hero() {
 
         {/* Botones */}
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <a href="#proyectos" style={{
+          <a href="#experiencia" style={{
             fontSize: 13, fontWeight: 500, color: "#fff", textDecoration: "none",
             padding: "11px 22px", borderRadius: 8, background: "#388bfd",
             border: "1px solid #388bfd", transition: "all 0.18s ease",
