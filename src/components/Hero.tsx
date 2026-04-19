@@ -19,23 +19,19 @@ export default function Hero() {
   }, []);
 
   return (
-    <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "0 32px", maxWidth: 860, margin: "0 auto" }}>
+    <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "0 24px", maxWidth: 860, margin: "0 auto" }}>
       <div ref={ref} style={{ width: "100%" }}>
 
-        {/* Nombre */}
-        <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-2.5px", color: "#e6edf3", marginBottom: 10 }}>
-          Arael Amador<br />
+        <h1 style={{ fontSize: "clamp(2.2rem, 6vw, 4.5rem)", fontWeight: 700, lineHeight: 1.05, letterSpacing: "-2.5px", color: "#e6edf3", marginBottom: 10 }}>
+          Arael Amador
         </h1>
 
-        {/* Rol */}
-        <p style={{ fontSize: 16, color: "#8b949e", fontWeight: 400, marginBottom: 20, letterSpacing: "0.02em" }}>
+        <p style={{ fontSize: "clamp(13px, 3vw, 16px)", color: "#8b949e", fontWeight: 400, marginBottom: 20, letterSpacing: "0.02em" }}>
           Full-Stack Developer &nbsp;·&nbsp; Ingeniero en Software
         </p>
 
-        {/* Línea decorativa */}
         <div style={{ width: 40, height: 2, background: "#388bfd", borderRadius: 2, marginBottom: 24 }} />
 
-        {/* Stack chips */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 28 }}>
           {chips.map(c => (
             <span key={c} style={{
@@ -46,14 +42,12 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Descripción */}
-        <p style={{ fontSize: 15, color: "#6e7681", maxWidth: 460, lineHeight: 1.85, marginBottom: 44 }}>
+        <p style={{ fontSize: "clamp(13px, 3vw, 15px)", color: "#6e7681", maxWidth: 460, lineHeight: 1.85, marginBottom: 44 }}>
           Construyo productos web con{" "}
           <span style={{ color: "#8b949e", fontWeight: 500 }}>buen código</span>{" "}
           y atención al detalle desde la interfaz hasta el servidor. Me especializo en React, Node.js y todo lo que hay en el medio.
         </p>
 
-        {/* Botones */}
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
           <a href="#experiencia" style={{
             fontSize: 13, fontWeight: 500, color: "#fff", textDecoration: "none",
@@ -87,6 +81,12 @@ export default function Hero() {
         </div>
 
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          section { padding-top: 80px !important; }
+        }
+      `}</style>
     </section>
   );
 }
