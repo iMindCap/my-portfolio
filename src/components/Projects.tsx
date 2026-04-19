@@ -26,24 +26,28 @@ const defaultTag = { bg: "rgba(255,255,255,0.05)", color: "#8b949e", border: "#3
 
 export default function Projects() {
   return (
-    <section id="proyectos" style={{ padding: "0 24px 100px", maxWidth: 900, margin: "0 auto" }}>
+    <section id="proyectos" style={{ padding: "60px 16px 80px", maxWidth: 900, margin: "0 auto" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 24 }}>
-        <p style={{ fontSize: 25, letterSpacing: "0.12em", color: "#6e7681", textTransform: "uppercase" }}>Proyectos</p>
+        <p style={{ fontSize: "clamp(18px, 4vw, 25px)", letterSpacing: "0.12em", color: "#6e7681", textTransform: "uppercase" }}>Proyectos</p>
       </div>
 
       <div style={{ display: "grid", gap: 12 }}>
         {projects.map(p => (
           <div key={p.title} style={{
             background: "#161b22", border: "1px solid #30363d", borderRadius: 12,
-            padding: "28px 32px", display: "grid", gridTemplateColumns: "1fr auto", gap: 24, alignItems: "start",
+            padding: "clamp(18px, 4vw, 28px) clamp(16px, 4vw, 32px)",
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: 16,
+            alignItems: "start",
             transition: "border-color 0.2s",
           }}
             onMouseEnter={e => (e.currentTarget.style.borderColor = "#388bfd44")}
             onMouseLeave={e => (e.currentTarget.style.borderColor = "#30363d")}
           >
             <div>
-              <h3 style={{ fontSize: 16, fontWeight: 600, color: "#e6edf3", marginBottom: 8 }}>{p.title}</h3>
-              <p style={{ fontSize: 13, color: "#8b949e", lineHeight: 1.7, marginBottom: 16 }}>{p.description}</p>
+              <h3 style={{ fontSize: "clamp(14px, 3vw, 16px)", fontWeight: 600, color: "#e6edf3", marginBottom: 8 }}>{p.title}</h3>
+              <p style={{ fontSize: "clamp(12px, 2.5vw, 13px)", color: "#8b949e", lineHeight: 1.7, marginBottom: 16 }}>{p.description}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                 {p.tags.map(t => {
                   const c = tagColors[t] ?? defaultTag;
@@ -56,27 +60,25 @@ export default function Projects() {
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 12, minWidth: 100 }}>
-              <div style={{ display: "flex", gap: 8 }}>
-                <a href={p.github} target="_blank" rel="noopener noreferrer" style={{
-                  fontSize: 12, color: "#e6edf3", textDecoration: "none",
-                  padding: "6px 14px", borderRadius: 6, background: "#21262d",
-                  border: "1px solid #30363d", transition: "border-color 0.15s",
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <a href={p.github} target="_blank" rel="noopener noreferrer" style={{
+                fontSize: 12, color: "#e6edf3", textDecoration: "none",
+                padding: "6px 14px", borderRadius: 6, background: "#21262d",
+                border: "1px solid #30363d", transition: "border-color 0.15s",
+              }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = "#8b949e")}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = "#30363d")}
+              >Code</a>
+              {p.demo && (
+                <a href={p.demo} target="_blank" rel="noopener noreferrer" style={{
+                  fontSize: 12, color: "#fff", textDecoration: "none",
+                  padding: "6px 14px", borderRadius: 6, background: "#238636",
+                  border: "1px solid #2ea043", transition: "background 0.15s",
                 }}
-                  onMouseEnter={e => (e.currentTarget.style.borderColor = "#8b949e")}
-                  onMouseLeave={e => (e.currentTarget.style.borderColor = "#30363d")}
-                >Code</a>
-                {p.demo && (
-                  <a href={p.demo} target="_blank" rel="noopener noreferrer" style={{
-                    fontSize: 12, color: "#fff", textDecoration: "none",
-                    padding: "6px 14px", borderRadius: 6, background: "#238636",
-                    border: "1px solid #2ea043", transition: "background 0.15s",
-                  }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "#2ea043")}
-                    onMouseLeave={e => (e.currentTarget.style.background = "#238636")}
-                  >Demo ↗</a>
-                )}
-              </div>
+                  onMouseEnter={e => (e.currentTarget.style.background = "#2ea043")}
+                  onMouseLeave={e => (e.currentTarget.style.background = "#238636")}
+                >Demo ↗</a>
+              )}
             </div>
           </div>
         ))}
